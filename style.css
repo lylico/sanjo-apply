@@ -1,0 +1,131 @@
+/* 全体のスタイル設定 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* フォントファミリー */
+    margin: 0; /* デフォルトのマージンをリセット */
+    padding: 20px; /* 全体のパディング */
+    background-color: #f4f7f6; /* 背景色 */
+    color: #333; /* テキストの色 */
+    display: flex; /* Flexboxで中央寄せ */
+    justify-content: center; /* 水平方向の中央寄せ */
+    align-items: flex-start; /* 垂直方向の上部揃え */
+    min-height: 100vh; /* 最小の高さをビューポートの高さに設定 */
+}
+
+/* コンテナのスタイル設定 */
+.container {
+    background-color: #ffffff; /* コンテナの背景色 */
+    padding: 30px; /* コンテナ内のパディング */
+    border-radius: 8px; /* 角の丸み */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 影のスタイル */
+    width: 100%; /* 幅を100%に設定 */
+    max-width: 600px; /* 最大幅を設定 */
+}
+
+/* 見出し1のスタイル設定 */
+h1 {
+    text-align: center; /* テキストを中央寄せ */
+    color: #2c3e50; /* テキストの色 */
+    margin-bottom: 30px; /* 下マージン */
+}
+
+/* 見出し2のスタイル設定 */
+h2 {
+    color: #2c3e50; /* テキストの色 */
+    margin-top: 30px; /* 上マージン */
+    border-top: 1px solid #eee; /* 上部にボーダー */
+    padding-top: 20px; /* 上パディング */
+}
+
+/* フォームグループのスタイル設定 */
+.form-group {
+    margin-bottom: 18px; /* 下マージン */
+}
+
+/* ラベルのスタイル設定 */
+label {
+    display: block; /* ブロック要素として表示 */
+    margin-bottom: 8px; /* 下マージン */
+    font-weight: bold; /* 太字 */
+    color: #555; /* テキストの色 */
+}
+
+/* 入力フィールドとテキストエリアのスタイル設定 */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: calc(100% - 20px); /* 幅を計算（パディング分を考慮） */
+    padding: 10px; /* パディング */
+    border: 1px solid #ddd; /* ボーダー */
+    border-radius: 5px; /* 角の丸み */
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+    font-size: 16px; /* フォントサイズ */
+    background-color: #fcfcfc; /* 背景色 */
+}
+
+/* 読み取り専用入力フィールドのスタイル設定 */
+input[readonly] {
+    background-color: #e9ecef; /* 背景色 */
+    cursor: not-allowed; /* カーソルを禁止マークに */
+}
+
+/* 計算値表示要素のスタイル設定 */
+.calculated-value {
+    display: inline-block; /* インラインブロック要素として表示 */
+    padding: 10px; /* パディング */
+    background-color: #e9f5ff; /* 背景色 */
+    border: 1px solid #cce7ff; /* ボーダー */
+    border-radius: 5px; /* 角の丸み */
+    min-width: 150px; /* 最小幅 */
+    text-align: right; /* テキストを右寄せ */
+    font-weight: bold; /* 太字 */
+    color: #0056b3; /* テキストの色 */
+}
+
+/* ボタンのスタイル設定 */
+button {
+    background-color: #007bff; /* 背景色 */
+    color: white; /* テキストの色 */
+    padding: 12px 25px; /* パディング */
+    border: none; /* ボーダーなし */
+    border-radius: 5px; /* 角の丸み */
+    cursor: pointer; /* カーソルをポインターに */
+    font-size: 17px; /* フォントサイズ */
+    transition: background-color 0.3s ease; /* 背景色の変化にアニメーション */
+    width: 100%; /* 幅を100%に設定 */
+    margin-top: 20px; /* 上マージン */
+}
+
+/* ボタンホバー時のスタイル設定 */
+button:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+/* メール本文出力テキストエリアのスタイル設定 */
+#mailBodyOutput {
+    height: 300px; /* ある程度の高さを確保 */
+    resize: vertical; /* ユーザーが縦方向にリサイズできるように */
+    font-family: 'Consolas', 'Monaco', monospace; /* 等幅フォントで見やすく */
+    white-space: pre-wrap; /* 改行を保持 */
+    word-wrap: break-word; /* 長い単語も折り返す */
+    margin-top: 15px; /* 上マージン */
+}
+
+/* 出力セクション内のボタンのスタイル設定 */
+#outputSection button {
+    margin-top: 10px; /* 上マージン */
+    background-color: #28a745; /* 背景色 */
+}
+
+/* 出力セクション内のボタンホバー時のスタイル設定 */
+#outputSection button:hover {
+    background-color: #218838; /* ホバー時の背景色 */
+}
+
+/* レスポンシブ対応（画面幅が768px以下の場合） */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* パディングを調整 */
+        margin: 10px; /* マージンを調整 */
+    }
+}

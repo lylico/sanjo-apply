@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashing Up 賛助会員 申込フォーム</title>
+    <!-- style.css を読み込みます -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mashing Up 賛助会員 申込フォーム</h1>
+
+        <!-- 企業名入力グループ -->
+        <div class="form-group">
+            <label for="companyName">企業名：</label>
+            <input type="text" id="companyName" placeholder="例：●●株式会社">
+        </div>
+
+        <!-- 品名（固定値）グループ -->
+        <div class="form-group">
+            <label for="productName">品名：</label>
+            <input type="text" id="productName" value="MASHING UP賛助会員" readonly>
+        </div>
+
+        <!-- 口数入力グループ -->
+        <div class="form-group">
+            <label for="quantity">口数：</label>
+            <input type="number" id="quantity" value="1" min="1">
+        </div>
+
+        <!-- 開始日入力グループ -->
+        <div class="form-group">
+            <label for="startDate">開始日（毎月1日を選択）：</label>
+            <input type="date" id="startDate">
+        </div>
+
+        <!-- 税抜料金表示グループ -->
+        <div class="form-group">
+            <label>税抜料金：</label>
+            <span id="priceExcludingTax" class="calculated-value">0円</span>
+        </div>
+
+        <!-- 税込料金表示グループ -->
+        <div class="form-group">
+            <label>税込料金：</label>
+            <span id="priceIncludingTax" class="calculated-value">0円</span>
+        </div>
+
+        <!-- 請求月表示グループ -->
+        <div class="form-group">
+            <label>請求月：</label>
+            <span id="billingMonth" class="calculated-value"></span>
+        </div>
+
+        <!-- メール本文生成ボタン -->
+        <button onclick="generateMailBody()">メール本文を生成</button>
+
+        <!-- 生成されたメール本文の表示セクション -->
+        <div id="outputSection">
+            <h2>生成されたメール本文（コピー＆ペーストしてください）</h2>
+            <textarea id="mailBodyOutput" readonly></textarea>
+            <!-- クリップボードにコピーボタン -->
+            <button onclick="copyToClipboard()">クリップボードにコピー</button>
+        </div>
+    </div>
+
+    <!-- script.js を読み込みます。bodyの閉じタグの直前が推奨されます。 -->
+    <script src="script.js"></script>
+</body>
+</html>
+
