@@ -136,3 +136,27 @@ function copyToClipboard() {
     document.execCommand('copy'); // 選択した内容をコピー
     alert('生成されたテキストがクリップボードにコピーされました！');
 }
+
+/**
+ * フォームの内容を初期状態にリセットする
+ */
+function resetForm() {
+    companyNameInput.value = '';
+    quantityInput.value = '1';
+    
+    // 開始日を初期値（今月または翌月の1日）に再設定
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    if (today.getDate() > 1) {
+        today.setMonth(today.getMonth() + 1);
+        const nextMonthYear = today.getFullYear();
+        const nextMonth = (today.getMonth() + 1).toString().padStart(2, '0');
+        startDateInput.value = `${nextMonthYear}-${nextMonth}-01`;
+    } else {
+        startDateInput.value = `${year}-${month}-01`;
+    }
+
+    mailBodyOutput.value = '';
+    calculatePrices(); // 料金表示を更新
+}
